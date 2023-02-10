@@ -1,19 +1,37 @@
-# Chalenge-9-README-Generator
-using the command line to use node.js, to create a  README using user input.
+# README Generator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for information about my application repository
-THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-WHEN I enter my project title
-THEN this is displayed as the title of the README
-WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-WHEN I click on the links in the Table of Contents
-THEN I am taken to the corresponding section of the README
+## Description
+
+Introducing a state-of-the-art README generator that streamlines the process of creating professional and comprehensive README files. Utilizing Node.js and the command line interface, this generator prompts the user for relevant information and generates a README document that accurately reflects the project. Say goodbye to the manual and time-consuming process of creating README files, and let this generator do the heavy lifting for you.<br>Link to video of project in action: https://drive.google.com/file/d/12AX56QAku87vn3ciOoiVpgu3Vqhti07_/view?usp=sharing (Please dont forget to raise the video quaility before playing!!)
+
+## Table of Contents
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Credits](#Credits)
+- [License](#License)
+- [Contributions](#Contributions)
+
+## Installation
+
+To run this application, the user needs to perform the following steps:<br>1. Clone the repository from GitHub.<br>2. Download Node.<br>3. Ensure that the file system and inquirer module are installed.<br> 
+
+## Usage
+
+1. Open a new terminal in your IDE<br>2. Navigate to the directory containing this application<br>3. Install the dependencies using the command 'npm i'<br>4. Ensure that Node.js is installed on your system<br>5. Enter 'node index.js' into your terminal to initiate the app<br>6. Follow the prompts to create your README file.<br>
+
+## Credits
+
+Not at this time.
+
+## License
+
+https://opensource.org/licenses/MIT
+
+## Contributions
+
+We're not allowing any contributions at this time.
+
+Email: Karandeepnagpal2@gmail.com
+GitHub: [KDNagpal](https://github.com/KDNagpal)

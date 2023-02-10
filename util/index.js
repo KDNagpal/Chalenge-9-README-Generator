@@ -2,37 +2,12 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require("util");
 const generateMarkdown = require('./generateMarkdown');
+const writeREADME = util.promisify(fs.writeFile);
 
 
 //function for README questions
 function promptUser() {
     return inquirer.prompt([
-    {
-        type: 'input',
-        message: 'What is your GitHub username?',
-        name: 'username',
-        validate: nameInput => {
-            if(nameInput) {
-                return true;
-            } if(!nameInput) {
-                console.log("Please enter your GitHub username or enter 'N/A'");
-                return false;r
-            }
-        } 
-    },
-    {
-        type: 'input',
-        message: 'What is your email address?',
-        name: 'email',
-        validate: emailInput => {
-            if(emailInput) {
-                return true;
-            } if(!emailInput) {
-                console.log("Please enter your email address or enter 'N/A'");
-                return false;
-            }
-        } 
-    },
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -118,20 +93,6 @@ function promptUser() {
     },
     {
         type: 'input',
-        message: 'What are the features of application? If theres more than one, use commas to seperate them.',
-        name: 'features',
-        validate: featureInput => {
-            if(featureInput) {
-                return true;
-            } if(!featureInput) {
-                console.log("You should include a list features, or else enter 'N/A'");
-                return false;
-            }
-        },
-
-    },
-    {
-        type: 'input',
         message: 'How can other developers contribute to your project?',
         name: 'contribute',
         validate: contributeInput => {
@@ -145,17 +106,31 @@ function promptUser() {
     },
     {
         type: 'input',
-        message: 'How was your application tested?',
-        name: 'tests',
-        validate: testInput => {
-            if(testInput){
+        message: 'What is your email address?',
+        name: 'email',
+        validate: emailInput => {
+            if(emailInput) {
                 return true;
-            } if(!testsnput) {
-                console.log("Let users know how you tested your application or enter 'N/A'");
+            } if(!emailInput) {
+                console.log("Please enter your email address or enter 'N/A'");
                 return false;
             }
-        },
+        } 
     },
+    {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'username',
+        validate: nameInput => {
+            if(nameInput) {
+                return true;
+            } if(!nameInput) {
+                console.log("Please enter your GitHub username or enter 'N/A'");
+                return false;r
+            }
+        } 
+    }
+   
 
 ])
 }
@@ -164,7 +139,9 @@ function promptUser() {
 async function generate() {
     try {
         const answers = await promptUser();
-        console.log('README generated!!')
+        const generateREADME = generateMarkdown(answers);
+        await writeREADME('./generated/README.md', generateREADME)
+        console.log('README generated!! Check the "Generated" folder')
         }   catch(err) {
             console.log(err);
         }
